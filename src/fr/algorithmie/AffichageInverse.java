@@ -21,6 +21,7 @@ public class AffichageInverse {
 		for (i = 0; i < arrayCopy.length; i++) {
 			arrayCopy[i] = array[i];
 		}
+		
 		// vérification en affichant les éléments de arrayCopy: 
 //		System.out.print("\narrayCopy = " );
 //		int j = 0;
