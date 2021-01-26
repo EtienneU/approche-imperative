@@ -7,7 +7,7 @@ public class InteractifFibonacci {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Suite de Fibonacci - Choisir un rang n : ");
-		int n = scanner.nextInt();
+		int n = scanner.nextInt(); // n est mon rang
 		// initialisation de mes variables
 		int f_n_2 = 0; // 1er  terme de la suite de Fibonacci (rang n = 0)
 		int f_n_1 = 1; // 2eme terme de la suite de Fibonacci (rang n = 1)
@@ -22,6 +22,12 @@ public class InteractifFibonacci {
 				
 			i++;
 		}
-		System.out.println("Nombre de rang " + n + " : " + f_n);
+		
+		if (n == 0) {
+			f_n = 0;
+		}
+		else {
+			System.out.println("Nombre de rang " + n + " : " + f_n);
+		}
 	}
 }
