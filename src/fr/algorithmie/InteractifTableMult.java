@@ -10,7 +10,7 @@ public class InteractifTableMult {
 		
 		int nb = -1;
 		while (nb < 1 || nb > 10) {
-			System.out.println("Saisir un entier entre 1 et 10 pour afficher sa table de multiplication : ");
+			System.out.print("Saisir un entier entre 1 et 10 pour afficher sa table de multiplication : ");
 			nb = scanner.nextInt();
 		}
 		

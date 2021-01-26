@@ -6,15 +6,25 @@ public class AffichageInverse {
 		int[] array = {1, 15, -3, 0, 8, 7, 4, -2, 28, 7, -1, 17, 2, 3, 0, 14, -4};
 		
 		int i = 0;
-		System.out.print("Ordre normal  : array = " );
+		System.out.print("Ordre normal  : array = [" );
 		while (i < array.length) {
-			System.out.print(array[i++] + " ");
+			if (i == array.length - 1) {
+				System.out.println(array[i] + "]");
+			} else {
+				System.out.print(array[i] + ", ");
+			}
+			i++;
 		}
 		
-		System.out.print("\nOrdre inversé : array = " );
-		i = array.length-1;
+		i = array.length - 1;
+		System.out.print("\nOrdre inversé : array = [" );
 		while (i >= 0) {
-			System.out.print(array[i--] + " ");
+			if (i == 0) {
+				System.out.println(array[i] + "]");
+			} else {
+				System.out.print(array[i] + ", ");
+			}
+			i--;
 		}
 		
 		int[] arrayCopy = new int[array.length];
@@ -22,11 +32,16 @@ public class AffichageInverse {
 			arrayCopy[i] = array[i];
 		}
 		
-		// vérification en affichant les éléments de arrayCopy: 
-//		System.out.print("\narrayCopy = " );
+		// vérification de la copie en affichant ses éléments: 
 //		int j = 0;
+//		System.out.print("\narrayCopy = [" );
 //		while (j < arrayCopy.length) {
-//			System.out.print(array[j++] + " ");
+//			if (j == arrayCopy.length - 1) {
+//				System.out.print(array[j] + "]");
+//			} else {
+//				System.out.print(array[j] + ", ");
+//			}
+//			j++;
 //		}
 	}
 }

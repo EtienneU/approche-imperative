@@ -35,7 +35,11 @@ public class InteractifPlusMoins {
 				System.out.println("x est PLUS PETIT que " + saisie);
 				round++;
 			} else {
-				System.out.println("BRAVO, vous avez trouvé en " + round + " coup(s) ! x = " + findMe);
+				if (round == 1) {
+					System.out.println("BRAVO, vous avez trouvé du premier coup ! x = " + findMe);
+				} else {
+					System.out.println("BRAVO, vous avez trouvé en " + round + " coups ! x = " + findMe);
+				}
 			}
 		} // fin de la partie
 	}

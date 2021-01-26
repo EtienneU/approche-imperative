@@ -9,7 +9,7 @@ public class InteractifSommeArithmetique {
 		Scanner scanner = new Scanner(System.in);
 		int nb = -1;
 		while (nb < 0) {
-			System.out.println("Saisir un entier positif : ");
+			System.out.print("Saisir un entier positif : ");
 			nb = scanner.nextInt();
 		}
 		
@@ -18,6 +18,6 @@ public class InteractifSommeArithmetique {
 			somme += i;
 		}
 		
-		System.out.println("Somme arithmetique de " + nb + " = " + somme);
+		System.out.println("Somme arithmetique de " + nb + " vaut " + somme + ".");
 	}
 }

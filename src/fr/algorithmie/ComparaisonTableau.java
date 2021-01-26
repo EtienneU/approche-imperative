@@ -7,10 +7,6 @@ public class ComparaisonTableau {
 		int[] array1 = {1, 15, -3, 8, 7, 4, -2, 28, -1, 17, 2, 3, 0, 14, -4};
 		int[] array2 = {3, -8, 17, 5, -1, 4, 0, 6, 2, 11, -5, -4, 8};
 		
-		// récuperation des deux longueurs de tableau
-//		int maxLength = (array1.length > array2.length) ? array1.length : array2.length;
-//		int minLength = (array1.length > array2.length) ? array2.length : array1.length;
-		
 		int[] bigTab = array1;
 		int[] smallTab = array2;
 		if (array1.length < array2.length) {
@@ -27,7 +23,10 @@ public class ComparaisonTableau {
 				}
 			}
 		}
-		
-		System.out.println("Nombre d'éléments communs à mes 2 tableaux : " + count);
+		if (count <= 1) {
+			System.out.println("Les 2 tableaux présentent " + count + " élement commun.");
+		} else {
+			System.out.println("Les 2 tableaux présentent " + count + " élements communs.");
+		}
 	}
 }

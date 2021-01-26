@@ -12,9 +12,13 @@ public class SommeDeTableaux {
 		}
 		
 		// vérification par l'affichage : 
-		System.out.print("Somme des éléments de mes deux tableaux : ");
+		System.out.print("Somme des éléments de mes deux tableaux : [");
 		for (int i = 0; i < tabSom.length; i++) {
-			System.out.print(tabSom[i] + " ");
+			if (i == tabSom.length - 1) {
+				System.out.println(tabSom[i] + "]");
+			} else {
+				System.out.print(tabSom[i] + ", ");
+			}
 		}
 	}
 }

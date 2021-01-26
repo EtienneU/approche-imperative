@@ -27,12 +27,12 @@ public class InteractifStockageNombre {
 		while (choix != 0) {
 					
 			// gestion de l'agrandissement du tableau s'il est complet
-			if (index == array.length - 1) {
+			if (index >= array.length - 1) {
 				int[] array_temp = new int[array.length + 3]; 
 				for (int i = 0; i < array.length; i++) {
 					array_temp[i] = array[i];
 				}
-				array = array_temp;
+				array = array_temp; // je passe la référence de mon tableau temporaire à ma variable array
 			}
 			
 			// gestion des actions en fonction du choix saisi
@@ -46,7 +46,7 @@ public class InteractifStockageNombre {
 			} else if (choix == 2) {
 				// le programme affiche les nombres stockés
 				System.out.print("Votre tableau d'entiers : ");
-				for (int i = 0; i < index; i++) {
+				for (int i = 0; i < index; i++) { // si j'affiche plus loin que index, je vois les 0 par défaut
 					if (i == index - 1) {
 						System.out.println(array[i] + ".");
 					} else {

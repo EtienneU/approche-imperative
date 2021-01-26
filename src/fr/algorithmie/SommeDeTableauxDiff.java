@@ -29,9 +29,13 @@ public class SommeDeTableauxDiff {
 		}
 
 		// vérification par l'affichage :
-		System.out.print("Somme des éléments de mes deux tableaux : ");
+		System.out.print("Somme des éléments de mes deux tableaux : [");
 		for (int i = 0; i < arraySom.length; i++) {
-			System.out.print(arraySom[i] + " ");
+			if (i == arraySom.length - 1) {
+				System.out.println(arraySom[i] + "]");
+			} else {
+				System.out.print(arraySom[i] + ", ");
+			}
 		}
 	}
 }
