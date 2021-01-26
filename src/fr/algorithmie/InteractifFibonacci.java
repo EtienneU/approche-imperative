@@ -10,23 +10,24 @@ public class InteractifFibonacci {
 		int n = scanner.nextInt(); // n est mon rang
 		
 		// initialisation de mes variables
-		int f_n_2 = 0; // 1er  terme de la suite de Fibonacci (rang n = 0)
-		int f_n_1 = 1; // 2eme terme de la suite de Fibonacci (rang n = 1)
-		int f_n = f_n_2 + f_n_1; // 3eme terme de la suite (rang n = 2)
+		float f_n_2 = 0; // 1er  terme de la suite de Fibonacci (rang n = 0)
+		float f_n_1 = 1; // 2eme terme de la suite de Fibonacci (rang n = 1)
+		float f_n = f_n_2 + f_n_1;	  // 3eme terme de la suite (rang n = 2)
 		
-		int i = 2; // Je commence au rang 2 car les précédents rangs étaient déja effectés à mes variables
-		while (i <= n) {
-			f_n = f_n_2 + f_n_1;
-			f_n_2 = f_n_1;
-			f_n_1 = f_n;
-			i++;
+		int i = 0; 
+		while (i <= n - 2) { // Je décale de 2 car les 2 premiers rangs initialisaient mes variables
+			if (n == 0) {
+				f_n = 0;
+			} else if (n == 1) {
+				f_n = 1;
+			} else {
+				f_n = f_n_2 + f_n_1;
+				f_n_2 = f_n_1;
+				f_n_1 = f_n;
+				i++;
+			}
 		}
 		
-		if (n == 0) {
-			f_n = 0;
-		}
-		else {
-			System.out.println("Nombre de rang " + n + " : " + f_n);
-		}
+		System.out.println("Nombre de rang " + n + " : " + f_n);
 	}
 }
