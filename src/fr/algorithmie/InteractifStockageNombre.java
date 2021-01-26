@@ -20,24 +20,54 @@ public class InteractifStockageNombre {
 
 		Scanner scanner = new Scanner(System.in);
 		int choix = scanner.nextInt();
-		// switch (1 ou 2, sinon recommencer à choisir 1 ou 2)
 		
+		int[] array = new int[3];
+		int index = 0;
 		
-//		while (saisie != findMe) {
-//			if (saisie > maxBound || saisie < minBound) {
-//				System.out.println("/!\\ x se situe entre " + minBound + " et " + maxBound);
-//			}
-//			System.out.print("Essai n°" + round + " : ");
-//			saisie = scanner.nextInt();
-//			if (saisie < findMe) {
-//				System.out.println("x est PLUS GRAND que " + saisie);
-//				round++;
-//			} else if (saisie > findMe) {
-//				System.out.println("x est PLUS PETIT que " + saisie);
-//				round++;
-//			} else {
-//				System.out.println("BRAVO, vous avez trouvé en " + round + " coup(s) ! x = " + findMe);
-//			}
-//		}
+		while (choix != 0) {
+					
+			// gestion de l'agrandissement du tableau s'il est complet
+			if (index == array.length - 1) {
+				int[] array_temp = new int[array.length + 3]; 
+				for (int i = 0; i < array.length; i++) {
+					array_temp[i] = array[i];
+				}
+				array = array_temp;
+			}
+			
+			// gestion des actions en fonction du choix saisi
+			//  Le programme demande un nombre à l’utilisateur puis l’ajoute à un tableau.
+			if (choix == 1) {
+				System.out.print("Saisir un nombre entier à stocker : ");
+				int nb = scanner.nextInt();
+				array[index++] = nb; 
+				// j'incrémente l'index du dernier ajout --> contrôle sur l'agrandissement du tableau 
+				System.out.println("Choisir une action (1 ou 2) : ");
+			} else if (choix == 2) {
+				// le programme affiche les nombres stockés
+				System.out.print("Votre tableau d'entiers : ");
+				for (int i = 0; i < index; i++) {
+					if (i == index - 1) {
+						System.out.println(array[i] + ".");
+					} else {
+						System.out.print(array[i] + ", ");
+					}
+				}
+				System.out.println("Choisir une action (1 ou 2) : ");
+			} else {
+				String sortie = 	"................  FIN  ......................\n"
+						+         	"|                                           |\n"
+						+         	"|  Quitter le programme ?                   |\n"
+						+         	"|                                           |\n"
+						+ 			"|  0- Oui, quitter                          |\n"
+						+           "|  1- Non --> Ajouter un nombre             |\n"
+						+           "|  2- Non --> Afficher les nombres stockés  |\n"
+						+         	"|...........................................|\n";
+				
+				System.out.println(sortie);
+			}
+			choix = scanner.nextInt();
+		}
+		System.out.println("*** Fin. Merci, au revoir. ***");
 	}
 }
