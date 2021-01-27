@@ -32,9 +32,10 @@ public class Interactif21Batons {
 					+         	"             " + nb_rest + " bâtons        \n"
 					+         	"...........................................\n");
 	
+			int my_remove = 1;
 			if (turn) { // mon tour
 				System.out.print("Je retire 1, 2 ou 3 bâtons ? ");
-				int my_remove = scanner.nextInt();
+				my_remove = scanner.nextInt();
 				while (my_remove != 1 && my_remove != 2 && my_remove != 3) {
 					System.out.print("Vous devez retirer 1, 2 ou 3 bâtons : ");
 					my_remove = scanner.nextInt();
@@ -46,10 +47,13 @@ public class Interactif21Batons {
 				nb_rest -= my_remove;
 				turn = !turn;
 			} else { // le tour tu PC
-				int pc_remove = rand.nextInt((3 - 1) + 1) + 1;
+//				int pc_remove = rand.nextInt((3 - 1) + 1) + 1;
+				int pc_remove = 4 - my_remove;
+				System.out.println(pc_remove);
 				while (nb_rest - pc_remove <= 0) {
 					System.out.println("Le PC ne peut pas retirer plus de " + (nb_rest - 1) + " bâton(s)");
-					pc_remove = rand.nextInt((3 - 1) + 1) + 1;
+//					pc_remove = rand.nextInt((3 - 1) + 1) + 1;
+					pc_remove = 4 - my_remove;
 				}
 				System.out.println("Le PC vient de retirer " + pc_remove + " bâton(s)");
 				nb_rest -= pc_remove;

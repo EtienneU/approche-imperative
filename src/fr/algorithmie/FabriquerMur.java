@@ -34,12 +34,14 @@ public class FabriquerMur {
 						+ " Mon stock : " + nbSmall + " Small briques.");
 				if (reste == 0 || nbSmall >= reste) {
 					resultat = true;
+					System.out.println("Nickel, il est possible de construire le mur.");
 				}
 			} else { // si j'ai moins de Big briques que ce que j'aimerais
 				reste = longueur - (5 * nbBig);
 				System.out.println("reste = " + reste);
 				if (reste == 0 || nbSmall >= reste) {
 					resultat = true;
+					System.out.println("C'est ok, je peux construire le mur.");
 				}
 			}
 		}
