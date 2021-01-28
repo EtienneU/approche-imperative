@@ -8,63 +8,76 @@ public class Interactif21Batons {
 	public static void main(String[] args) {
 		
 		// fixation des règles initiales
-		int nb_tot_batons = 21;
-		int nb_max_retrait = 3;
-		int nb_rest = nb_tot_batons; 
+		short nb_depart = 21; // Nombre initla de bâtons
+		short nb_max_retrait = 3; // Nombre max de bâtons que l'on peut retirer par tour
+		short nb_rest = nb_depart;
 		Scanner scanner = new Scanner(System.in);
 		Random rand = new Random(); // importe de la classe Random de java.util
+		
+		
+		// premier joueur tiré aléatoirement
+		boolean turn = rand.nextBoolean(); // je viens de voir que cette méthode existe, c'est parfait !
+				
+		int my_remove = 0;	// retrait du joueur humain
+		int pc_remove = 0;	// retraits du bot (pc)
+		int n = 0;			// nombre de paquets de (nb_max_retrait + 1) bâtons (sans le bâton final)
+		
+		System.out.println("\tJEU DES BATONS --> celui qui retire le dernier bâton perd la partie \n");
 
-		System.out.println(" JEU DES BATONS ");
-		
-		// turn true = c'est au tour de l'utilisateur, sinon (turn false) c'est au PC de jouer
-		// premier joueur désigné aléatoirement
-		boolean turn = true; 
-		int random_turn = rand.nextInt((2 - 1) + 1) + 1;
-		if (random_turn == 2) {
-			turn = false;
-		}
-		
 		boolean game = true; // le jeu s'arrête lorsque game = false
 		
 		while (game) {
 
-			System.out.println(	"...........................................\n"
-					+         	"             " + nb_rest + " bâtons        \n"
-					+         	"...........................................\n");
-	
-			int my_remove = 1;
+			for (int i = 0; i < nb_rest; i++) {
+				System.out.print(" | ");
+			}
+			System.out.println(" " + nb_rest + " bâtons demeurent \n");
+			
 			if (turn) { // mon tour
-				System.out.print("Je retire 1, 2 ou 3 bâtons ? ");
-				my_remove = scanner.nextInt();
-				while (my_remove != 1 && my_remove != 2 && my_remove != 3) {
-					System.out.print("Vous devez retirer 1, 2 ou 3 bâtons : ");
-					my_remove = scanner.nextInt();
+				
+				System.out.print("Vous retirez combien de bâtons ? : ");
+				my_remove = scanner.nextShort();
+				while (my_remove <= 0 || my_remove > nb_max_retrait) {
+					System.out.print("Vous devez retirer entre 1 et " + nb_max_retrait + " bâtons : ");
+					my_remove = scanner.nextShort();
 				}
 				while (nb_rest - my_remove <= 0) {
 					System.out.println("Actuellement, vous ne pouvez pas retirer plus de " + (nb_rest - 1) + " bâton(s) : ");
-					my_remove = scanner.nextInt();
+					my_remove = scanner.nextShort();
 				}
 				nb_rest -= my_remove;
 				turn = !turn;
+				
 			} else { // le tour tu PC
-//				int pc_remove = rand.nextInt((3 - 1) + 1) + 1;
-				int pc_remove = 4 - my_remove;
-				System.out.println(pc_remove);
-				while (nb_rest - pc_remove <= 0) {
-					System.out.println("Le PC ne peut pas retirer plus de " + (nb_rest - 1) + " bâton(s)");
-//					pc_remove = rand.nextInt((3 - 1) + 1) + 1;
-					pc_remove = 4 - my_remove;
+				
+				n = (nb_rest - 1) / (nb_max_retrait + 1); // nombre de paquets de 4 bâtons (sans le bâton final)
+				// Si le PC joue le 1er tour
+				if ((nb_rest - 1) % 4 == 0) {
+					pc_remove = rand.nextInt((3 - 1) + 1) + 1;
+				} else {
+					pc_remove = (short) (nb_rest - 1 - 4 * n);
+					if (nb_rest <= nb_max_retrait + 1) {
+						pc_remove = nb_rest - 1; 
+					}
+					while (nb_rest - pc_remove <= 0) {
+						pc_remove = nb_rest - 1 - 4 * n; // Pour que le pc gagne à coup sûr lorsqu'il est premier joueur
+					}
 				}
-				System.out.println("Le PC vient de retirer " + pc_remove + " bâton(s)");
+				if (pc_remove == 1) {
+					System.out.println("Le PC vient de retirer " + pc_remove + " bâton");
+				} else {
+					System.out.println("Le PC vient de retirer " + pc_remove + " bâtons");
+				}
 				nb_rest -= pc_remove;
 				turn = !turn;
+				
 			}
 
 			if (nb_rest <= 1) {
-				System.out.print("FIN DU JEU --> ");
-				game = !game;
+				System.out.print(" | Il n'en reste plus qu'un... FIN DU JEU --> ");
+				game = false;
 				if (!turn) {
-					System.out.println("*** BRAVO, vous avez gagné contre le PC ! ***");
+					System.out.println("*** BRAVO, VOUS AVEZ GAGNE CONTRE LE PC ! ***");
 				} else {
 					System.out.println("Dommage, vous avez perdu contre le PC. Try again.");
 				}
