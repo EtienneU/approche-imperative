@@ -17,7 +17,7 @@ public class AffichageInverse {
 		}
 		
 		i = array.length - 1;
-		System.out.print("\nOrdre inversé : array = [" );
+		System.out.print("\nOrdre inversÃ© : array = [" );
 		while (i >= 0) {
 			if (i == 0) {
 				System.out.println(array[i] + "]");
@@ -32,7 +32,7 @@ public class AffichageInverse {
 			arrayCopy[i] = array[i];
 		}
 		
-		// vérification de la copie en affichant ses éléments: 
+		// vÃ©rification de la copie en affichant ses Ã©lÃ©ments: 
 //		int j = 0;
 //		System.out.print("\narrayCopy = [" );
 //		while (j < arrayCopy.length) {

@@ -14,7 +14,7 @@ public class InversionContenu {
 			i++;
 		}
 		
-		// Affichage des éléments de mes 2 tableaux :
+		// Affichage des Ã©lÃ©ments de mes 2 tableaux :
 		System.out.print("\narray     = [");
 		for (int j = 0; j < array.length; j++) {
 			if (j == array.length - 1) {

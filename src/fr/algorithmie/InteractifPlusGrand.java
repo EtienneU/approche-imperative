@@ -16,7 +16,7 @@ public class InteractifPlusGrand {
 		int max = Integer.MIN_VALUE;
 		int i = 1;
 		while (i <= 10) {
-			System.out.print("saisie n°" + i + " : ");
+			System.out.print("saisie nÂ°" + i + " : ");
 			int nb = scanner.nextInt();
 			saisies[i - 1] = nb;
 			if (nb > max) {

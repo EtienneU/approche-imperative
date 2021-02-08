@@ -6,7 +6,7 @@ public class FirstLast6 {
 
 		int[] array = new int[] { 6, 5, 6, 6, 23, -3, 4 };
 
-		boolean firstLast6 = false; // valeur par défaut
+		boolean firstLast6 = false; // valeur par dÃ©faut
 
 		if (array.length >= 1 && (array[0] == 6 || array[array.length - 1] == 6)) {
 			firstLast6 = true;

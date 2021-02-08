@@ -13,6 +13,6 @@ public class InteractifTantQue {
 			System.out.println("Saisir un entier entre 1 et 10 : ");
 			nb = scanner.nextInt();
 		}
-		System.out.println("Très bien, vous avez saisi " + nb + ".");
+		System.out.println("TrÃ¨s bien, vous avez saisi " + nb + ".");
 	}
 }

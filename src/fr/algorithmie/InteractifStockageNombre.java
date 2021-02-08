@@ -32,21 +32,21 @@ public class InteractifStockageNombre {
 				for (int i = 0; i < array.length; i++) {
 					array_temp[i] = array[i];
 				}
-				array = array_temp; // je passe la rÈfÈrence de mon tableau temporaire ‡ ma variable array
+				array = array_temp; // je passe la r√©f√©rence de mon tableau temporaire √† ma variable array
 			}
 			
 			// gestion des actions en fonction du choix saisi
-			//  Le programme demande un nombre ‡ líutilisateur puis líajoute ‡ un tableau.
+			//  Le programme demande un nombre √† l'utilisateur puis l'ajoute √† un tableau.
 			if (choix == 1) {
-				System.out.print("Saisir un nombre entier ‡ stocker : ");
+				System.out.print("Saisir un nombre entier √† stocker : ");
 				int nb = scanner.nextInt();
 				array[index++] = nb; 
-				// j'incrÈmente l'index du dernier ajout --> contrÙle sur l'agrandissement du tableau 
+				// j'incr√©mente l'index du dernier ajout --> contr√¥le sur l'agrandissement du tableau 
 				System.out.println("Choisir une action (1 ou 2) : ");
 			} else if (choix == 2) {
-				// le programme affiche les nombres stockÈs
+				// le programme affiche les nombres stock√©s
 				System.out.print("Votre tableau d'entiers : ");
-				for (int i = 0; i < index; i++) { // si j'affiche plus loin que index, je vois les 0 par dÈfaut
+				for (int i = 0; i < index; i++) { // si j'affiche plus loin que index, je vois les 0 par d√©faut
 					if (i == index - 1) {
 						System.out.println(array[i] + ".");
 					} else {
@@ -61,7 +61,7 @@ public class InteractifStockageNombre {
 						+         	"|                                           |\n"
 						+ 			"|  0- Oui, quitter                          |\n"
 						+           "|  1- Non --> Ajouter un nombre             |\n"
-						+           "|  2- Non --> Afficher les nombres stockÈs  |\n"
+						+           "|  2- Non --> Afficher les nombres stock√©s  |\n"
 						+         	"|...........................................|\n";
 				
 				System.out.println(sortie);

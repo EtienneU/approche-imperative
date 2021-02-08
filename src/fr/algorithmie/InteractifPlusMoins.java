@@ -9,7 +9,7 @@ public class InteractifPlusMoins {
 
 		Scanner scanner = new Scanner(System.in);
 
-		// Génération de l'entier aléatoire, compris entre minBound et maxBound :
+		// GÃ©nÃ©ration de l'entier alÃ©atoire, compris entre minBound et maxBound :
 		int minBound = 1;
 		int maxBound = 100;
 		Random rand = new Random(); // importe de la classe Random de java.util
@@ -21,12 +21,12 @@ public class InteractifPlusMoins {
 		int round = 1;
 
 		int saisie = Integer.MIN_VALUE;
-		// début de la partie 
+		// dÃ©but de la partie 
 		while (saisie != findMe) {
 			if (saisie > maxBound || saisie < minBound) {
 				System.out.println("/!\\ x se situe entre " + minBound + " et " + maxBound);
 			}
-			System.out.print("Essai n°" + round + " : ");
+			System.out.print("Essai nÂ°" + round + " : ");
 			saisie = scanner.nextInt();
 			if (saisie < findMe) {
 				System.out.println("x est PLUS GRAND que " + saisie);
@@ -36,9 +36,9 @@ public class InteractifPlusMoins {
 				round++;
 			} else {
 				if (round == 1) {
-					System.out.println("BRAVO, vous avez trouvé du premier coup ! x = " + findMe);
+					System.out.println("BRAVO, vous avez trouvÃ© du premier coup ! x = " + findMe);
 				} else {
-					System.out.println("BRAVO, vous avez trouvé en " + round + " coups ! x = " + findMe);
+					System.out.println("BRAVO, vous avez trouvÃ© en " + round + " coups ! x = " + findMe);
 				}
 			}
 		} // fin de la partie

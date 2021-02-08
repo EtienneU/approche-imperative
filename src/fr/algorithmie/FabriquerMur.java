@@ -4,7 +4,7 @@ public class FabriquerMur {
 
 	public static void main(String[] args) {
 
-		// Tests de vérification
+		// Tests de vÃ©rification
 		verifier(3, 1, 8, true);
 		verifier(3, 1, 9, false);
 		verifier(3, 2, 10, true);
@@ -26,11 +26,11 @@ public class FabriquerMur {
 		if (longueur > (5 * nbBig + nbSmall)) {
 			System.out.println("C'est mort : je ne dispose pas d'assez de briques pour cette longueur");
 		} else {
-			// je récupère la quantité de Big dont j'ai besoin
+			// je rÃ©cupÃ¨re la quantitÃ© de Big dont j'ai besoin
 			int qBig = longueur / 5; // quotient (division euclidienne)
 			int reste = longueur - (5 * qBig);
 			if (qBig <= nbBig) {
-				System.out.println("reste = " + reste + " Small briques à récupérer."
+				System.out.println("reste = " + reste + " Small briques Ã  rÃ©cupÃ©rer."
 						+ " Mon stock : " + nbSmall + " Small briques.");
 				if (reste == 0 || nbSmall >= reste) {
 					resultat = true;

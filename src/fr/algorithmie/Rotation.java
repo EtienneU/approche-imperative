@@ -14,7 +14,7 @@ public class Rotation {
 			i++;
 		}
 
-		// vérification par l'affichage :
+		// vÃ©rification par l'affichage :
 		System.out.print("Tableau initial :      array = [");
 		for (int j = 0; j < array.length; j++) {
 			if (j == array.length - 1) {

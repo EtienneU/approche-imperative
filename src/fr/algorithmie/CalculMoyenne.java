@@ -15,7 +15,7 @@ public class CalculMoyenne {
 		
 		float moy = som;
 		moy /= array.length;
-		System.out.println("Moyenne des éléments de array : " + moy);
+		System.out.println("Moyenne des Ã©lÃ©ments de array : " + moy);
 	}
 
 }

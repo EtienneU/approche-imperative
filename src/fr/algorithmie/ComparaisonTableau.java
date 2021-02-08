@@ -8,7 +8,7 @@ public class ComparaisonTableau {
 		
 		int[] array1 = {1, 15, -3, 8, 7, 4, -2, 28, -1, 17, 2, 3, 0, 14, -4};
 		int[] array2 = {3, -8, 17, 5, -1, 4, 0, 6, 2, 11, -5, -4, 8};
-		int[] arrayStock = new int[] {}; // facultatif : tableau stockant les éventuels éléments en commun
+		int[] arrayStock = new int[] {}; // facultatif : tableau stockant les Ã©ventuels Ã©lÃ©ments en commun
 		
 		int[] bigTab = array1;
 		int[] smallTab = array2;
@@ -17,7 +17,7 @@ public class ComparaisonTableau {
 			smallTab = array1;
 		}
 		
-		int count = 0; // nombre d'éléments en commun dans mes deux tableaux
+		int count = 0; // nombre d'Ã©lÃ©ments en commun dans mes deux tableaux
 		
 		for (int i = 0; i < bigTab.length; i++) {
 			for (int j = 0; j < smallTab.length; j++) {
@@ -35,11 +35,11 @@ public class ComparaisonTableau {
 		}
 		
 		if (count == 0) {
-			System.out.println("Les 2 tableaux ne présentent aucun élément commun.");
+			System.out.println("Les 2 tableaux ne prÃ©sentent aucun Ã©lÃ©ment commun.");
 		} else if (count == 1) {
-			System.out.println("Les 2 tableaux présentent " + count + " élement commun.");
+			System.out.println("Les 2 tableaux prÃ©sentent " + count + " Ã©lement commun.");
 		} else {
-			System.out.println("Les 2 tableaux présentent " + count + " élements communs.");
+			System.out.println("Les 2 tableaux prÃ©sentent " + count + " Ã©lements communs.");
 		}
 		
 		// facultatif

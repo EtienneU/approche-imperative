@@ -15,7 +15,7 @@ public class InteractifFibonacci {
 		float f_n = f_n_2 + f_n_1;	   // 3eme terme de la suite (rang n = 2)
 		
 		int i = 0; 
-		while (i <= n - 2) { // Je décale de 2 car les 2 premiers rangs initialisaient mes variables
+		while (i <= n - 2) { // Je dÃ©cale de 2 car les 2 premiers rangs initialisaient mes variables
 			if (n == 0) {
 				f_n = 0;
 			} else if (n == 1) {

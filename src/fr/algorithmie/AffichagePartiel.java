@@ -19,7 +19,7 @@ public class AffichagePartiel {
 		System.out.print("Elements pairs de array : [ ");
 		i = 0;
 		while (i < array.length) {
-			if (array[i] % 2 == 0) { // inclue les entiers négatifs
+			if (array[i] % 2 == 0) { // inclue les entiers nÃ©gatifs
 				System.out.print(array[i] + " ");
 			}
 			i++;
@@ -29,7 +29,7 @@ public class AffichagePartiel {
 		System.out.print("Elements dont l'index est pair : ");
 		i = 0;
 		while (i < array.length) {
-			if (i % 2 == 0) { // inclue les entiers négatifs
+			if (i % 2 == 0) { // inclue les entiers nÃ©gatifs
 				System.out.print(array[i] + "(i=" + i + ") ");
 			}
 			i++;
@@ -39,7 +39,7 @@ public class AffichagePartiel {
 		System.out.print("Elements impairs de array : [ ");
 		i = 0;
 		while (i < array.length) {
-			if (array[i] % 2 != 0) { // inclue les entiers négatifs
+			if (array[i] % 2 != 0) { // inclue les entiers nÃ©gatifs
 				System.out.print(array[i] + " ");
 			}
 			i++;

@@ -11,8 +11,8 @@ public class SommeDeTableaux {
 			tabSom[i] = tab1[i] + tab2[i];
 		}
 		
-		// vérification par l'affichage : 
-		System.out.print("Somme des éléments de mes deux tableaux : [");
+		// vÃ©rification par l'affichage : 
+		System.out.print("Somme des Ã©lÃ©ments de mes deux tableaux : [");
 		for (int i = 0; i < tabSom.length; i++) {
 			if (i == tabSom.length - 1) {
 				System.out.println(tabSom[i] + "]");
