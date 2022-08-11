@@ -6,36 +6,36 @@ import java.util.Scanner;
 public class Interactif21Batons {
 
 	public static void main(String[] args) {
-		
-		// fixation des règles initiales
-		short nb_depart = 21; // Nombre initla de bâtons
-		short nb_max_retrait = 3; // Nombre max de bâtons que l'on peut retirer par tour
-		short nb_rest = nb_depart;
+		System.out.println("\n\tJEU DES BATONS --> 2 joueurs : le PC et vous. Celui qui retire LE DERNIER BATON perd la partie \n");
+
+		// fixation des conditions initiales
+		short nb_depart = 21;      // Nombre initial de bâtons
+		short nb_max_retrait = 3;  // Nombre max de bâtons que l'on peut retirer par tour
+		short nb_rest = nb_depart; // Nombre de bâtons restant au début de chaque tour
 		Scanner scanner = new Scanner(System.in);
-		Random rand = new Random(); // importe de la classe Random de java.util
-		
-		
-		// premier joueur tiré aléatoirement
-		boolean turn = rand.nextBoolean(); // je viens de voir que cette méthode existe, c'est parfait !
-				
+		Random rand = new Random();
+		boolean turn = rand.nextBoolean();// premier joueur tiré aléatoirement : si turn vaut false alors c'est au tour du PC
 		int my_remove = 0;	// retrait du joueur humain
 		int pc_remove = 0;	// retraits du bot (pc)
 		int n = 0;			// nombre de paquets de (nb_max_retrait + 1) bâtons (sans le bâton final)
-		
-		System.out.println("\tJEU DES BATONS --> celui qui retire le dernier bâton perd la partie \n");
+
+		if (turn) {
+			System.out.println("Vous commencez la partie.\n");
+		} else {
+			System.out.println("Le premier tour revient au PC.\n");
+		}
 
 		boolean game = true; // le jeu s'arrête lorsque game = false
-		
 		while (game) {
 
 			for (int i = 0; i < nb_rest; i++) {
 				System.out.print(" | ");
 			}
-			System.out.println(" " + nb_rest + " bâtons demeurent \n");
+			System.out.println(" " + nb_rest + " bâtons \n");
 			
 			if (turn) { // mon tour
 				
-				System.out.print("Vous retirez combien de bâtons ? : ");
+				System.out.print("Votre tour. Combien de bâtons retirez-vous ? : ");
 				my_remove = scanner.nextShort();
 				while (my_remove <= 0 || my_remove > nb_max_retrait) {
 					System.out.print("Vous devez retirer entre 1 et " + nb_max_retrait + " bâtons : ");
@@ -70,7 +70,6 @@ public class Interactif21Batons {
 				}
 				nb_rest -= pc_remove;
 				turn = !turn;
-				
 			}
 
 			if (nb_rest <= 1) {
@@ -79,7 +78,7 @@ public class Interactif21Batons {
 				if (!turn) {
 					System.out.println("*** BRAVO, VOUS AVEZ GAGNE CONTRE LE PC ! ***");
 				} else {
-					System.out.println("Dommage, vous avez perdu contre le PC. Try again.");
+					System.out.println("GAME OVER...Dommage, vous avez perdu contre le PC. Try again !");
 				}
 			}
 		}	
