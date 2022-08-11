@@ -1,5 +1,6 @@
 package fr.algorithmie;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -26,21 +27,29 @@ public class InteractifPlusMoins {
 			if (saisie > maxBound || saisie < minBound) {
 				System.out.println("/!\\ x se situe entre " + minBound + " et " + maxBound);
 			}
-			System.out.print("Essai n°" + round + " : ");
-			saisie = scanner.nextInt();
-			if (saisie < findMe) {
-				System.out.println("x est PLUS GRAND que " + saisie);
-				round++;
-			} else if (saisie > findMe) {
-				System.out.println("x est PLUS PETIT que " + saisie);
-				round++;
-			} else {
-				if (round == 1) {
-					System.out.println("BRAVO, vous avez trouvé du premier coup ! x = " + findMe);
+			try {
+				System.out.print("Essai n°" + round + " : ");
+				saisie = scanner.nextInt();
+				if (saisie < findMe) {
+					System.out.println("x est PLUS GRAND que " + saisie);
+					round++;
+				} else if (saisie > findMe) {
+					System.out.println("x est PLUS PETIT que " + saisie);
+					round++;
 				} else {
-					System.out.println("BRAVO, vous avez trouvé en " + round + " coups ! x = " + findMe);
+					if (round == 1) {
+						System.out.println("BRAVO, vous avez trouvé du premier coup ! x = " + findMe);
+					} else {
+						System.out.println("BRAVO, vous avez trouvé en " + round + " coups ! x = " + findMe);
+					}
 				}
+			} catch(InputMismatchException ime) {
+				System.out.println("Mauvaise saisie. Un entier entre " + minBound + " et " + maxBound + " était attendu...");
+			} catch (IllegalArgumentException iae) {
+				System.out.println(iae.getMessage());
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
-		} // fin de la partie
+		}
 	}
 }

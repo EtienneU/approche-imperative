@@ -9,17 +9,14 @@ public class SommeDeTableauxDiff {
 
 		int[] bigTab = array1;
 		int[] smallTab = array2;
-		// petite méthode permettant de récupérer la référence du plus grand tab et
-		// celle du plus court
+		// petite méthode de récupération de la référence du plus grand tab et celle du plus court
 		if (array1.length < array2.length) {
 			bigTab = array2;
 			smallTab = array1;
 		}
 
-		// déclaration de mon tableau final qui recevra les sommes de chaque élément de
-		// tab1 et tab2
+		// déclaration de mon tab final qui recevra les sommes de chaque élément des 2 tab
 		int[] arraySom = new int[bigTab.length];
-
 		for (int i = 0; i < arraySom.length; i++) {
 			if (i <= smallTab.length - 1) {
 				arraySom[i] = bigTab[i] + smallTab[i];
